@@ -1,0 +1,20 @@
+<div class="row">
+
+  <form class="form-horizontal" name="editMovie">
+
+    <div class="form-group">
+      <label for="editTitle" class="col-lg-2 control-label">Title: </label>
+      <div class="col-lg-8">
+        <input type="text"
+        class="form-control"
+        name="editTitle"
+        ng-model="movie.title"
+        ng-change="change()"
+        uib-tooltip="You can type in this field"
+        tooltip-placement="top-left"></input>
+      </div>
+    </div>
+
+  </form>
+
+</div>

@@ -1,7 +1,7 @@
-app.controller('HomeController', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
+app.controller('HomeController', ['$scope', `$http`, '$firebaseArray', function($scope, $http, $firebaseArray) {
   console.log("Home controller.");
 
-  var ref = new Firebase("https://crudiest-firebase.firebaseio.com/");
+  var ref = new Firebase("https://crudiest-movies-fire.firebaseio.com/");
   $scope.movies = $firebaseArray(ref);
 
   $scope.getLocation = function(val) {
@@ -19,10 +19,10 @@ app.controller('HomeController', ['$scope', '$firebaseArray', function($scope, $
     $scope.loading = true; // switch on the glyphicon to indicate that the data is loading
     $scope.movie.title = null; // needed to prevent previous query from autofilling search form
     console.log("Selected!");
-    return $http.get('//www.omdbapi.com/?t=' + $item)
-    .then(function(response){
-      var movie = {
-        actors: response.data.Actors,
+    return $http.get('//www.omdbapi.com/?t=' + $item) // send an HTTP request to the OMDb to get a movie object
+    .then(function(response){ // then execute a promise
+      var movie = { // make a movie object locally matching the downloaded OMDb movie object
+        actors: response.data.Actors, // local fields are filled with data from the OMDb
         awards: response.data.Awards,
         comments: [],
         country: response.data.Country,
@@ -43,9 +43,9 @@ app.controller('HomeController', ['$scope', '$firebaseArray', function($scope, $
         imdbVotes: response.data.imdbVotes,
         dateAdded: Date.now()
       };
-      $scope.movies.$add(movie).then(function() {
+      $scope.movies.$add(movie).then(function() { // use a Firebase array method to add the new movie object to our movies array
         $scope.order = '$id' // reset orderBy so that new movie appears in upper left
-        $scope.loading = false;
+        $scope.loading = false; // switch off the "downloading data" glyphicon
       });
     });
   };
