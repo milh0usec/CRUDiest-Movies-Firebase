@@ -1,3 +1,95 @@
+@font-face {
+  font-family: "Terminator";
+  src: url("fonts/Terminator.ttf") format("truetype");
+}
+
+h1 {
+  font-family: Terminator, sans-serif;
+  text-shadow: 4px 4px 4px #aaa;
+  color: black;
+}
+
+/*HOME PAGE STYLES*/
+
+.addMovie {
+  font-size: larger;
+}
+
+.glyphicon-search {
+  padding-right: 40px;
+  color: silver;
+  font-size: larger;
+}
+
+.resume:link {
+  text-decoration: none;
+}
+
 .movieIndex {
   display: inline;
+}
+
+.extraSmallposter {
+  width: 49%;
+}
+
+.smallposter {
+  width: 24.5%;
+  height: 276px;
+}
+
+.mediumposter {
+  width: 19.5%;
+  height: 282px;
+}
+
+.largeposter {
+  width: 16.3%;
+  height: 285px;
+  padding-top: 3px;
+}
+
+.extraSmallposter:hover, .smallposter:hover, .mediumposter:hover, .largeposter:hover {
+  outline: 5px solid blue;
+}
+
+/*SHOW/EDIT STYLES*/
+
+.likes {
+  font-size: 48pt;
+  text-align: right;
+}
+
+.comment {
+  border-style: solid;
+  border-width: thin;
+  padding: 5px;
+  border-color: silver;
+}
+
+.commentAuthor {
+  text-align: right;
+  font-style: italic;
+}
+
+.showComments {
+  font-weight: bold;
+}
+
+.saved {
+  padding-top: 4px;
+  color: green;
+  -webkit-animation: smooth 10s ease-in;
+  -moz-animation: smooth 10s ease-in;
+  -o-animation: smooth 10s ease-in;
+  -ms-animation: smooth 10s ease-in;
+  animation: smooth 10s ease-in;
+}
+
+@-webkit-keyframes smooth {
+  0% { opacity: 0;}
+  25% { opacity: 1;}
+  50% { opacity: 1;}
+  75% { opacity: 1;}
+  100% { opacity: 0;}
 }

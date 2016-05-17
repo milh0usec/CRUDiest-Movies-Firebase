@@ -4,6 +4,9 @@ app.controller('HomeController', ['$scope', `$http`, '$firebaseArray', function(
   var ref = new Firebase("https://crudiest-movies-fire.firebaseio.com/");
   $scope.movies = $firebaseArray(ref);
 
+  // Set variables
+  $scope.order = 'dateAdded';
+
   $scope.getLocation = function(val) {
     return $http.get('//www.omdbapi.com/?s=' + val) // send an HTTP request to the OMDb
     .then(function(response){ // then execute a promise
