@@ -6,6 +6,9 @@ app.controller('HomeController', ['$scope', `$http`, '$firebaseArray', function(
 
   // Set variables
   $scope.order = 'dateAdded';
+  $scope.reverse = true;
+  $scope.loading = false;
+  $scope.countryFilter = undefined;
 
   $scope.getLocation = function(val) {
     return $http.get('//www.omdbapi.com/?s=' + val) // send an HTTP request to the OMDb

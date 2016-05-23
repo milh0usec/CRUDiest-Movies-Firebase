@@ -32,6 +32,18 @@
       <ng-view />
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyC30EPhVoU52Bp-wEyTS9v6kGbrAIaNMIk",
+        authDomain: "crudiest-movies-fire.firebaseapp.com",
+        databaseURL: "https://crudiest-movies-fire.firebaseio.com",
+        storageBucket: "crudiest-movies-fire.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
+
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="javascript/routes/routes.js"></script>
     <script type="text/javascript" src="javascript/controllers/HomeController.js"></script>

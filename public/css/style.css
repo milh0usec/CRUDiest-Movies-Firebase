@@ -25,6 +25,10 @@ h1 {
   text-decoration: none;
 }
 
+.flags {
+  padding-top: 5px;
+}
+
 .movieIndex {
   display: inline;
 }
